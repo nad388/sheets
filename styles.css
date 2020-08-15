@@ -1,35 +1,69 @@
-.flex-container {
-    display: -webkit-flex;
-    display: flex;  
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    text-align: center;
+*{
+    box-sizing: border-box;
 }
-
-.flex-container > * {
-    padding: 15px;
-    -webkit-flex: 1 100%;
-    flex: 1 100%;
-}
-
-.article {
-    text-align: left;
-}
-
-header {background: black;color:white;}
-footer {background: #aaa;color:white;}
-.nav {background:#eee;}
-
-.nav ul {
-    list-style-type: none;
+html, body {
     padding: 0;
+    margin: 0;
+    font-family: verdana, arial, sans-serif; 
 }
-.nav ul a {
-    text-decoration: none;
+a { 
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+    color: khaki;
+   }
+
+a:hover {
+    color: #fff; /* Цвет текста */
+   }
+
+body {
+    color: #fff;
+    font-size: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
-@media all and (min-width: 768px) {
-    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
-    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
-    footer {-webkit-order:3;order:3;}
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    background: linear-gradient(45deg, #7d898f, #37474f) ;
+    flex: 2 2 12em;
+    padding: 1em;  
+}
+
+nav, aside {
+    flex: 1;
+    background-color: #455a64;
+    padding: 1em;
+    align-content: center;
+}
+nav {
+    order: 1;
+}
+ 
+header, footer {
+    flex: 0 0 5em;
+    background-color: #37474f;
+    padding: 1em;
+    
+}
+header {
+    text-align: center;    
+}
+footer {
+    text-align: right;
+}
+@media screen and (min-width: 600px) {
+     
+    body{
+        min-height: 100vh;
+    }
+    main {
+        flex-direction: row;
+        min-height: 100%;
+        flex: 1 1 auto;
+    }
 }
