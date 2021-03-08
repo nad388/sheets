@@ -83,7 +83,7 @@
     var c = parseFloat(document.getElementById('c').value);
     var q = parseInt(document.getElementById('q').value);
                      
-    const e = 7.85
+    const e = 7.85;
 
     if (isNaN(a)==true) a=0;
     if (isNaN(b)==true) b=0;
@@ -91,8 +91,9 @@
     if (isNaN(q)==true) q=0;
     if (isNaN(e)==true) e=0;
 
-    var d = (a * b * c * q) * e;
+    let d = ((a * b * c * q) * e).toFixed(2);
 
-    document.getElementById('result').innerHTML = a + " * " + b + " * " + c + " * " + q + " * " + e + " = " + d/1000 + " тн.";
+    document.getElementById('result').innerHTML = `${a} * ${b} * ${c} * ${q} * ${e} = ${d/1000} тн.`;
   }
+  
 </script>
